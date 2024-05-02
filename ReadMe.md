@@ -1,6 +1,6 @@
 # Friend - Remover
 
-Thanks to this simple Python tool, you will be able to remove all your dm or any person who you want.
+Thanks to this simple Python tool, You Will Be Able To Remove All Your DM Or Any Person That You Want.
 
 ## Requirements
 - Python 3.x
