@@ -1,7 +1,26 @@
+import requests
+import time
+import fade
 import discord
 import requests
 
-token = input("Your token here: ")
+text = """
+
+  █████▒██▀███   ██▓▓█████  ███▄    █ ▓█████▄     ██▀███  ▓█████  ███▄ ▄███▓ ▒█████   ██▒   █▓▓█████  ██▀███  
+▓██   ▒▓██ ▒ ██▒▓██▒▓█   ▀  ██ ▀█   █ ▒██▀ ██▌   ▓██ ▒ ██▒▓█   ▀ ▓██▒▀█▀ ██▒▒██▒  ██▒▓██░   █▒▓█   ▀ ▓██ ▒ ██▒
+▒████ ░▓██ ░▄█ ▒▒██▒▒███   ▓██  ▀█ ██▒░██   █▌   ▓██ ░▄█ ▒▒███   ▓██    ▓██░▒██░  ██▒ ▓██  █▒░▒███   ▓██ ░▄█ ▒
+░▓█▒  ░▒██▀▀█▄  ░██░▒▓█  ▄ ▓██▒  ▐▌██▒░▓█▄   ▌   ▒██▀▀█▄  ▒▓█  ▄ ▒██    ▒██ ▒██   ██░  ▒██ █░░▒▓█  ▄ ▒██▀▀█▄  
+░▒█░   ░██▓ ▒██▒░██░░▒████▒▒██░   ▓██░░▒████▓    ░██▓ ▒██▒░▒████▒▒██▒   ░██▒░ ████▓▒░   ▒▀█░  ░▒████▒░██▓ ▒██▒
+ ▒ ░   ░ ▒▓ ░▒▓░░▓  ░░ ▒░ ░░ ▒░   ▒ ▒  ▒▒▓  ▒    ░ ▒▓ ░▒▓░░░ ▒░ ░░ ▒░   ░  ░░ ▒░▒░▒░    ░ ▐░  ░░ ▒░ ░░ ▒▓ ░▒▓░
+ ░       ░▒ ░ ▒░ ▒ ░ ░ ░  ░░ ░░   ░ ▒░ ░ ▒  ▒      ░▒ ░ ▒░ ░ ░  ░░  ░      ░  ░ ▒ ▒░    ░ ░░   ░ ░  ░  ░▒ ░ ▒░
+ ░ ░     ░░   ░  ▒ ░   ░      ░   ░ ░  ░ ░  ░      ░░   ░    ░   ░      ░   ░ ░ ░ ▒       ░░     ░     ░░   ░ 
+          ░      ░     ░  ░         ░    ░          ░        ░  ░       ░       ░ ░        ░     ░  ░   ░     
+                                       ░                                                  ░                   
+
+ """
+print(fade.purplepink(text)) 
+
+token = input("Token here: ")
 
 user_token = token
 
@@ -15,10 +34,8 @@ for friend in response.json():
     # Friend name
     friend_name = friend['user']['username']
     
-    # Delete Friend
     response = requests.delete(f"https://discord.com/api/v9/users/@me/relationships/{friend['id']}", headers=headers)
 
-    # Shows Friends name
     print(f"Friend : {friend_name}")
 
 # Shows how many friends you have left
